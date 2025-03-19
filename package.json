@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://lucabaello1998.github.io/Tp1lucabaello",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
