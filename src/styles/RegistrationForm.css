@@ -1,0 +1,258 @@
+.registro-contenedor {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(5px);
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.registro-contenedor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #646cff, #9089fc);
+}
+
+.registro-contenedor h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.75rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.registro-contenedor h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: #646cff;
+  border-radius: 3px;
+}
+
+.formulario-registro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.grupo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  position: relative;
+}
+
+.grupo-campo label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  margin-left: 4px;
+}
+
+.grupo-campo input {
+  padding: 0.7rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff; /* Fondo blanco puro */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  color: #000000; /* Texto negro para mayor contraste */
+}
+
+.grupo-campo input:hover {
+  border-color: #c5c5c5;
+}
+
+.grupo-campo input:focus {
+  outline: none;
+  border-color: #646cff;
+  background-color: #ffffff; /* Mantener el fondo blanco al enfocar */
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0);
+  transform: translateY(-2px);
+}
+
+.grupo-campo input::placeholder {
+  color: #999; /* Placeholder más oscuro para mejor contraste */
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.grupo-campo:focus-within label {
+  color: #646cff;
+}
+
+.boton-enviar {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: linear-gradient(90deg, #646cff, #7e77ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(100, 108, 255, 0.25);
+  letter-spacing: 0.5px;
+}
+
+.boton-enviar:hover {
+  background: linear-gradient(90deg, #5a61ff, #7270fd);
+  box-shadow: 0 6px 15px rgba(100, 108, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.boton-enviar:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(100, 108, 255, 0.25);
+}
+
+.campo-password {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.campo-password input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.boton-mostrar-password {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #777;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.boton-mostrar-password:hover {
+  color: #646cff;
+}
+
+.boton-mostrar-password:focus {
+  outline: none;
+}
+
+.fila-campos {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.fila-campos .grupo-campo {
+  flex: 1;
+  min-width: 0; /* Permite que los elementos se ajusten correctamente */
+}
+
+@media (max-height: 700px) {
+  .registro-contenedor {
+    padding: 1rem 1.5rem;
+  }
+  
+  .registro-contenedor h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .formulario-registro {
+    gap: 0.6rem;
+  }
+  
+  .grupo-campo input {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .boton-enviar {
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .registro-contenedor {
+    padding: 1.2rem;
+    margin: 0.5rem;
+    border-radius: 12px;
+    max-width: 95%;
+  }
+  
+  .registro-contenedor h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .fila-campos {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .registro-contenedor {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .grupo-campo label {
+    font-size: 0.85rem;
+  }
+  
+  .grupo-campo input {
+    font-size: 0.9rem;
+  }
+  
+  .boton-enviar {
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .boton-mostrar-password {
+    color: #aaa;
+  }
+  
+  .boton-mostrar-password:hover {
+    color: #646cff;
+  }
+  
+  .grupo-campo input {
+    background-color: #ffffff; /* Mantener el fondo blanco incluso en modo oscuro */
+    border-color: #444;
+    color: #000000; /* Mantener el texto negro incluso en modo oscuro */
+  }
+  
+  .grupo-campo input:focus {
+    background-color: #ffffff;
+  }
+  
+  .grupo-campo input::placeholder {
+    color: #888;
+    opacity: 0.7;
+  }
+}
